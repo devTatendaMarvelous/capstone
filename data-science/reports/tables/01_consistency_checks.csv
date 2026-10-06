@@ -1,0 +1,5 @@
+check,rows_evaluated,failures
+min_temperature <= avg_temperature <= max_temperature,886,3
+crop is maize,974,0
+"data_source_type is REAL, SYNTHETIC, or EXTERNAL",974,0
+target yield_t_ha is present,974,20

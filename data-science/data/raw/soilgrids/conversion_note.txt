@@ -1,0 +1,1 @@
+Mapped SoilGrids means are divided by unit_measure.d_factor. Clay, sand, and silt are then divided by 10 when the result is still above 100, because those properties are stored as g/kg and the project column is percent. These are 250 m predictions, not farm laboratory results.

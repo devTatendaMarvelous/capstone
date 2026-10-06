@@ -1,0 +1,72 @@
+study_area:
+  country: Zimbabwe
+  province: Mashonaland East
+  district: Macheke
+  location_label: "Macheke study-area grid"
+  latitude: -18.136
+  longitude: 31.849
+  bbox:
+    min_lat: -18.25
+    max_lat: -18.02
+    min_lon: 31.75
+    max_lon: 31.95
+  boundary_status: study_area_approximation
+  boundary_note: "No authoritative Macheke district polygon was available to download. The box is an approximation around the town of Macheke and is not an official ward or district boundary. Synthetic ward codes are not used."
+
+crop:
+  name: maize
+  faostat_item_code: "56"
+  faostat_item_name: "Maize (corn)"
+
+season:
+  start_month: 11
+  end_month: 3
+  assumption: "Summer maize in Mashonaland East is treated as a November-March season that crosses the calendar year. The season label is the harvest year (the year containing January-March). This is a research assumption, not an official Agritex sowing calendar."
+
+critical_growth_period:
+  start_month: 1
+  end_month: 2
+  assumption: "January and February are treated as the critical reproductive window for this summer maize season. Phenology was not observed on Macheke farms."
+
+years:
+  start: 2000
+  end: 2023
+
+thresholds:
+  heat_stress_tmax_c: 33
+  rainfall_day_mm: 1.0
+
+nasa_power:
+  community: AG
+  parameters:
+    - T2M
+    - T2M_MAX
+    - T2M_MIN
+    - PRECTOTCORR
+  sleep_seconds: 1.5
+
+chirps:
+  climateserv_datatype: 0
+  sleep_seconds: 2.0
+  note: "Daily values are subset from CHIRPS through the SERVIR ClimateSERV API for the study-area box. Continental CHIRPS v3 rasters were not downloaded because each daily grid is too large for this machine. The stored source label is the product ClimateSERV returns, not a claim that a v3 GeoTIFF was read locally."
+
+soilgrids:
+  selected_depth: 0-5cm
+  depths:
+    - 0-5cm
+    - 5-15cm
+  properties:
+    - phh2o
+    - soc
+    - nitrogen
+    - clay
+    - sand
+    - silt
+    - cec
+    - bdod
+  note: "SoilGrids values are 250 m spatial predictions, not laboratory samples from Macheke farms."
+
+requests:
+  timeout_seconds: 90
+  retries: 4
+  user_agent: "SmartCrop-research/1.0 (academic; Macheke maize yield)"

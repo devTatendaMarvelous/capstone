@@ -1,0 +1,82 @@
+{
+  "model_name": "smartcrop_maize_yield",
+  "version": "2.0.0-real",
+  "algorithm": "Random Forest Regressor",
+  "features": [
+    "season_rainfall_mm",
+    "critical_period_rainfall_mm",
+    "rainfall_cv",
+    "rainfall_days",
+    "avg_temperature_c",
+    "max_temperature_c",
+    "min_temperature_c",
+    "temperature_range_c",
+    "heat_stress_days"
+  ],
+  "target": "yield_t_ha",
+  "metrics": {
+    "mae": 0.2239,
+    "rmse": 0.303,
+    "r2": -0.0931,
+    "test_mae": 0.2239,
+    "test_rmse": 0.303,
+    "test_r2": -0.0931,
+    "validation_mae": 0.3922,
+    "validation_rmse": 0.4181,
+    "validation_r2": -0.095
+  },
+  "dataset_version": "2.0.0-real",
+  "performance_target": {
+    "metric": "r2",
+    "threshold": 0.8,
+    "met": false
+  },
+  "disclaimer": "The target is FAOSTAT national Zimbabwe maize yield in t/ha. Predictors are seasonal weather for the Macheke study-area grid. This is not a farm-level Macheke yield model. R\u00b2 is not classification accuracy.",
+  "feature_importance": [
+    {
+      "rank": 1,
+      "feature": "season_rainfall_mm",
+      "importance_mean": 0.06963474180746738
+    },
+    {
+      "rank": 2,
+      "feature": "rainfall_days",
+      "importance_mean": 0.038695195405634465
+    },
+    {
+      "rank": 3,
+      "feature": "critical_period_rainfall_mm",
+      "importance_mean": 0.028574537290546154
+    },
+    {
+      "rank": 4,
+      "feature": "rainfall_cv",
+      "importance_mean": 0.021394433063178165
+    },
+    {
+      "rank": 5,
+      "feature": "temperature_range_c",
+      "importance_mean": 0.020444205929453597
+    },
+    {
+      "rank": 6,
+      "feature": "heat_stress_days",
+      "importance_mean": 0.016489074813918925
+    },
+    {
+      "rank": 7,
+      "feature": "avg_temperature_c",
+      "importance_mean": 0.0019084702788986663
+    },
+    {
+      "rank": 8,
+      "feature": "max_temperature_c",
+      "importance_mean": -0.004229731206800968
+    },
+    {
+      "rank": 9,
+      "feature": "min_temperature_c",
+      "importance_mean": -0.2146657504123907
+    }
+  ]
+}

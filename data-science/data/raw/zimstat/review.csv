@@ -1,0 +1,2 @@
+source,url,retrieved_at,ingestion_status,records_ingested,notes
+ZIMSTAT,https://zimstat.co.zw/,2026-10-05T07:28:02.012347+00:00,reviewed_not_ingested,0,"The public homepage was saved. No CSV or Excel agricultural table was linked from that page, so no ZIMSTAT measurements were ingested. District maize yield was not inferred from national figures."

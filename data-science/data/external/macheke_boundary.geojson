@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Macheke study-area approximation",
+        "boundary_status": "study_area_approximation",
+        "note": "No authoritative Macheke district polygon was available to download. The box is an approximation around the town of Macheke and is not an official ward or district boundary. Synthetic ward codes are not used.",
+        "country": "Zimbabwe",
+        "province": "Mashonaland East",
+        "district": "Macheke"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.75,
+              -18.25
+            ],
+            [
+              31.95,
+              -18.25
+            ],
+            [
+              31.95,
+              -18.02
+            ],
+            [
+              31.75,
+              -18.02
+            ],
+            [
+              31.75,
+              -18.25
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

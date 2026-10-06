@@ -1,0 +1,16 @@
+latitude,longitude,soilgrids_cell,property,column,depth,quantile,value_mapped,d_factor,mapped_units,target_units,value
+-18.136,31.849,"-18.13600,31.84900",phh2o,soil_ph,0-5cm,mean,58,10.0,pH*10,-,5.8
+-18.136,31.849,"-18.13600,31.84900",soc,soil_organic_carbon_g_kg,0-5cm,mean,140,10.0,dg/kg,g/kg,14.0
+-18.136,31.849,"-18.13600,31.84900",soc,soil_organic_carbon_g_kg,5-15cm,mean,109,10.0,dg/kg,g/kg,10.9
+-18.136,31.849,"-18.13600,31.84900",nitrogen,soil_nitrogen_g_kg,0-5cm,mean,135,100.0,cg/kg,g/kg,1.35
+-18.136,31.849,"-18.13600,31.84900",nitrogen,soil_nitrogen_g_kg,5-15cm,mean,82,100.0,cg/kg,g/kg,0.82
+-18.136,31.849,"-18.13600,31.84900",clay,soil_clay_pct,0-5cm,mean,204,10.0,g/kg,%,20.4
+-18.136,31.849,"-18.13600,31.84900",clay,soil_clay_pct,5-15cm,mean,192,10.0,g/kg,%,19.2
+-18.136,31.849,"-18.13600,31.84900",sand,soil_sand_pct,0-5cm,mean,620,10.0,g/kg,%,62.0
+-18.136,31.849,"-18.13600,31.84900",sand,soil_sand_pct,5-15cm,mean,624,10.0,g/kg,%,62.4
+-18.136,31.849,"-18.13600,31.84900",silt,soil_silt_pct,0-5cm,mean,176,10.0,g/kg,%,17.6
+-18.136,31.849,"-18.13600,31.84900",silt,soil_silt_pct,5-15cm,mean,184,10.0,g/kg,%,18.4
+-18.136,31.849,"-18.13600,31.84900",cec,soil_cec_cmol_kg,0-5cm,mean,72,10.0,mmol(c)/kg,cmol(c)/kg,7.2
+-18.136,31.849,"-18.13600,31.84900",cec,soil_cec_cmol_kg,5-15cm,mean,58,10.0,mmol(c)/kg,cmol(c)/kg,5.8
+-18.136,31.849,"-18.13600,31.84900",bdod,soil_bulk_density_g_cm3,0-5cm,mean,154,100.0,cg/cm³,kg/dm³,1.54
+-18.136,31.849,"-18.13600,31.84900",bdod,soil_bulk_density_g_cm3,5-15cm,mean,154,100.0,cg/cm³,kg/dm³,1.54

@@ -1,0 +1,1 @@
+https://rest.isric.org/soilgrids/v2.0/properties/query?lon=31.849&lat=-18.136&property=phh2o&depth=0-5cm&value=mean

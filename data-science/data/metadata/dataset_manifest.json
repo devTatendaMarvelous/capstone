@@ -1,0 +1,19 @@
+{
+  "dataset_name": "SmartCrop Macheke Maize Yield Dataset",
+  "dataset_version": "2.0.0-real",
+  "study_area": "Macheke, Mashonaland East, Zimbabwe",
+  "crop": "maize",
+  "synthetic_records": 0,
+  "real_records": 24,
+  "yield_records": 24,
+  "farm_level_yield_records": 0,
+  "sources": [
+    "NASA POWER",
+    "CHIRPS",
+    "SoilGrids 2.0",
+    "FAOSTAT"
+  ],
+  "created_at": "2026-10-05T07:28:48.187084+00:00",
+  "generated_by": "SmartCrop data acquisition pipeline",
+  "boundary_status": "study_area_approximation"
+}

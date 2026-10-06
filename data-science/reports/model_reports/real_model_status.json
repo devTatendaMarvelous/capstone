@@ -1,0 +1,60 @@
+{
+  "status": "INSUFFICIENT TARGET DATA",
+  "model_trained": true,
+  "chosen_model": "Random Forest Regressor",
+  "features": [
+    "season_rainfall_mm",
+    "critical_period_rainfall_mm",
+    "rainfall_cv",
+    "rainfall_days",
+    "avg_temperature_c",
+    "max_temperature_c",
+    "min_temperature_c",
+    "temperature_range_c",
+    "heat_stress_days"
+  ],
+  "farm_level_yield_records": 0,
+  "yield_records": 24,
+  "metrics": {
+    "mae": 0.2239,
+    "rmse": 0.303,
+    "r2": -0.0931,
+    "test_mae": 0.2239,
+    "test_rmse": 0.303,
+    "test_r2": -0.0931,
+    "validation_mae": 0.3922,
+    "validation_rmse": 0.4181,
+    "validation_r2": -0.095
+  },
+  "train_years": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015
+  ],
+  "validation_years": [
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "test_years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "disclaimer": "The target is FAOSTAT national Zimbabwe maize yield in t/ha. Predictors are seasonal weather for the Macheke study-area grid. This is not a farm-level Macheke yield model. R\u00b2 is not classification accuracy."
+}

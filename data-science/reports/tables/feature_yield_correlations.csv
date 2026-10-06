@@ -1,0 +1,13 @@
+feature,correlation_with_yield
+rainfall_mm,0.5362464587113479
+fertilizer_kg_ha,0.37983608376566136
+planting_delay_days,-0.2768826512151652
+planting_day,-0.21746299511126133
+avg_temperature_c,0.12663414378782836
+soil_organic_carbon,0.09262410737071451
+soil_nitrogen,0.09065911625772813
+soil_ph,0.0855883361175261
+temperature_range_c,-0.08022021810504766
+min_temperature_c,0.07297788187353253
+degrees_above_33_c,-0.05390611009478957
+max_temperature_c,-0.028204301090073564

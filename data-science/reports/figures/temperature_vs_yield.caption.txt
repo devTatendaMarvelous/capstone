@@ -1,0 +1,1 @@
+Scatter of synthetic average temperature against yield. Synthetic development data, not Macheke measurements.

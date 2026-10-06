@@ -1,0 +1,12 @@
+column,unit,non_missing,outside_plausible_range,outside_physical_range,plausible_min,plausible_max
+area_ha,ha,947,0,0,0.2,10.0
+rainfall_mm,mm,952,10,0,250.0,1400.0
+avg_temperature_c,°C,943,3,0,15.0,32.0
+max_temperature_c,°C,949,1,0,18.0,40.0
+min_temperature_c,°C,942,0,0,5.0,25.0
+soil_ph,pH,945,0,0,4.5,7.5
+soil_nitrogen,%,936,0,0,0.03,0.3
+soil_organic_carbon,%,939,0,0,0.3,3.0
+fertilizer_kg_ha,kg/ha,941,4,0,0.0,400.0
+planting_day,day index,946,0,0,1.0,100.0
+yield_t_ha,t/ha,954,2,0,0.1,6.5

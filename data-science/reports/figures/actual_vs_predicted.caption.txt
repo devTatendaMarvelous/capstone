@@ -1,0 +1,1 @@
+Test-season predictions against the synthetic yield. The line is equality, not a causal claim.

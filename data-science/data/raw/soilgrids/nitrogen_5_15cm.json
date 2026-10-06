@@ -1,0 +1,1 @@
+{"type":"Feature","geometry":{"type":"Point","coordinates":[31.849,-18.136]},"properties":{"layers":[{"name":"nitrogen","unit_measure":{"d_factor":100,"mapped_units":"cg/kg","target_units":"g/kg","uncertainty_unit":""},"depths":[{"range":{"top_depth":5,"bottom_depth":15,"unit_depth":"cm"},"label":"5-15cm","values":{"mean":82}}]}]},"query_time_s":0.8990530967712402}

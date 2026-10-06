@@ -1,0 +1,1 @@
+Missing values by column in the consolidated raw SmartCrop dataset. The file is synthetic. Blank cells were injected by the generator and are not survey non-response from Macheke.

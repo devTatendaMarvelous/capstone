@@ -1,0 +1,5 @@
+data_source,data_source_type,source_dataset,source_url,spatial_resolution,temporal_resolution,records,retrieved_at,geographic_level_note
+NASA POWER,meteorological,POWER Daily API,https://power.larc.nasa.gov/api/temporal/daily/point,NASA POWER point/grid analysis (about 0.5 degree),"daily, aggregated to the configured maize season",9131,2026-10-05T07:28:48.187084+00:00,grid_cell
+CHIRPS,rainfall,CHIRPS via ClimateSERV datatype 0,https://climateserv.servirglobal.net/api/submitDataRequest/,"0.05 degree grid, averaged over the study-area approximation box","daily, aggregated to the configured maize season",9131,2026-10-05T07:28:48.187084+00:00,grid_cell
+ISRIC SoilGrids,soil,SoilGrids 2.0,https://rest.isric.org/soilgrids/v2.0/properties/query,250 m prediction,static soil prediction,15,2026-10-05T07:28:48.187084+00:00,grid_cell
+FAOSTAT,agricultural_statistics,Production_Crops_Livestock_E_Africa,https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_Africa.zip,national,annual,64,2026-10-05T07:28:48.187084+00:00,national

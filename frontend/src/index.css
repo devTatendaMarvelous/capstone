@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background: #f4f7f3;
+  color: #14241c;
+}
+
+:focus-visible {
+  outline: 2px solid #14613f;
+  outline-offset: 2px;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl bg-white p-5 ring-1 ring-black/[0.04];
+    box-shadow: 0 1px 2px rgba(20, 36, 28, 0.04), 0 16px 40px rgba(20, 36, 28, 0.06);
+  }
+
+  .page-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.16em] text-moss;
+  }
+
+  .page-title {
+    @apply mt-1 font-serif text-3xl tracking-tight text-ink;
+  }
+
+  .input {
+    @apply mt-1 w-full rounded-xl border border-line bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-ink/35 focus:border-leaf focus:ring-4 focus:ring-leaf/10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-leaf px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0f4d32] disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-leaf ring-1 ring-line transition hover:bg-mist disabled:opacity-60;
+  }
+
+  .desk {
+    background:
+      linear-gradient(180deg, rgba(196, 161, 90, 0.16), transparent 72px),
+      #f7f4ec;
+    box-shadow: 0 1px 0 rgba(20, 36, 28, 0.08);
+  }
+}

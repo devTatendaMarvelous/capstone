@@ -1,0 +1,1 @@
+Test-season residuals. A pattern here would mean the model missed a systematic effect.

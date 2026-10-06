@@ -1,0 +1,29 @@
+{% extends "admin/index.html" %}
+{% block content %}
+<section class="smartcrop-admin">
+  <h2>Overview</h2>
+  <p>Counts below are read from the database for this request.</p>
+  <ul>
+    <li>Users: {{ smartcrop.users }}</li>
+    <li>Dataset versions: {{ smartcrop.datasets }}</li>
+    <li>Predictions: {{ smartcrop.predictions }}</li>
+    <li>Active model: {{ smartcrop.active_label }}</li>
+    <li>Model R²: {{ smartcrop.r2 }}</li>
+    <li>Model RMSE: {{ smartcrop.rmse }}</li>
+    <li>Model MAE: {{ smartcrop.mae }}</li>
+    <li>Average predicted yield (t/ha): {{ smartcrop.average_yield }}</li>
+  </ul>
+  <h3>Predictions by day</h3>
+  {% if smartcrop.bars %}
+    <svg viewBox="0 0 480 160" width="100%" height="160" role="img" aria-label="Predictions by day">
+      {% for bar in smartcrop.bars %}
+        <rect x="{{ bar.x }}" y="{{ bar.y }}" width="{{ bar.width }}" height="{{ bar.height }}" fill="#1F4D36"></rect>
+        <text x="{{ bar.x }}" y="155" font-size="9">{{ bar.label }}</text>
+      {% endfor %}
+    </svg>
+  {% else %}
+    <p>No predictions have been stored yet.</p>
+  {% endif %}
+</section>
+{{ block.super }}
+{% endblock %}

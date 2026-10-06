@@ -1,0 +1,24 @@
+column,dtype,nullable,unit,description,plausible_min,plausible_max
+record_id,string,False,identifier,Stable row identifier. Duplicated when a duplicate row is injected.,,
+farm_id,string,False,identifier,Synthetic farm identifier. The same farm may appear in more than one season.,,
+year,int,False,calendar year,Harvest year of the synthetic season (the second year in 2016/2017).,,
+season,string,False,agricultural season,Synthetic season label such as 2016/2017. The label does not mean the weather matched that historical year.,,
+country,string,False,name,Study-area country. Fixed to Zimbabwe for this research scope.,,
+province,string,False,name,Study-area province. Fixed to Mashonaland East.,,
+location,string,False,name,Study-area location. Fixed to Macheke.,,
+ward,string,False,code,Synthetic ward placeholder (SYN-W01 to SYN-W06). Not an official ward code for Macheke.,,
+crop,string,False,name,Crop token. This research scope stores only maize.,,
+area_ha,float,True,ha,Synthetic cultivated maize area.,0.2,10.0
+rainfall_mm,float,True,mm,Synthetic seasonal rainfall total for the maize growing season.,250.0,1400.0
+avg_temperature_c,float,True,°C,Synthetic average temperature over the growing season.,15.0,32.0
+max_temperature_c,float,True,°C,Synthetic mean daily maximum temperature over the growing season.,18.0,40.0
+min_temperature_c,float,True,°C,Synthetic mean daily minimum temperature over the growing season.,5.0,25.0
+soil_ph,float,True,pH,Synthetic topsoil pH in water.,4.5,7.5
+soil_nitrogen,float,True,%,"Synthetic total soil nitrogen, percent by mass. Typical generated values are about 0.06 to 0.18.",0.03,0.3
+soil_organic_carbon,float,True,%,"Synthetic soil organic carbon, percent. A future SoilGrids extract in g/kg would be divided by 10 before use.",0.3,3.0
+fertilizer_kg_ha,float,True,kg/ha,"Synthetic fertilizer product applied per hectare. This is product mass, not an elemental nutrient rate.",0.0,400.0
+planting_day,int,True,day index,Planting day index where 1 is 1 November. A value of 45 is 15 December. Development convention only.,1.0,100.0
+yield_t_ha,float,True,t/ha,Synthetic maize grain yield. This is the model target.,0.1,6.5
+data_source_type,string,False,category,"REAL, SYNTHETIC, or EXTERNAL. Synthetic rows must stay labelled.",,
+data_source,string,False,name,Name of the file source or generator that produced the row.,,
+schema_version,string,False,version,Schema version used when the row was written.,,

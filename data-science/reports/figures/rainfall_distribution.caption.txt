@@ -1,0 +1,1 @@
+Histogram of synthetic seasonal rainfall. Synthetic development data, not Macheke measurements.

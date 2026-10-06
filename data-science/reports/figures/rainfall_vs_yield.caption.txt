@@ -1,0 +1,1 @@
+Scatter of synthetic rainfall against yield. Association is partly built into the generator. Synthetic development data, not Macheke measurements.

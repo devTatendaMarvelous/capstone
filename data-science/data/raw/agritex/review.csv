@@ -1,0 +1,2 @@
+source,retrieved_at,ingestion_status,records_ingested,notes
+AGRITEX,2026-10-05T07:28:45.071204+00:00,reviewed_not_ingested,0,https://www.agriculture.gov.zw/ could not be downloaded: Download failed for https://www.agriculture.gov.zw/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: EE certificate key too weak (_ssl.c:1000)> https://zimstat.co.zw/ was reviewed. No public Macheke maize table was identified for ingestion. Personal farmer records were not scraped.

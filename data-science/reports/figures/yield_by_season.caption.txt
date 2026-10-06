@@ -1,0 +1,1 @@
+Yield by synthetic season label. Synthetic development data, not Macheke measurements.

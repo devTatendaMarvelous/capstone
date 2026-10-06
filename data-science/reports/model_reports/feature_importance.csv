@@ -1,0 +1,10 @@
+rank,feature,importance_mean
+1,season_rainfall_mm,0.06963474180746738
+2,rainfall_days,0.038695195405634465
+3,critical_period_rainfall_mm,0.028574537290546154
+4,rainfall_cv,0.021394433063178165
+5,temperature_range_c,0.020444205929453597
+6,heat_stress_days,0.016489074813918925
+7,avg_temperature_c,0.0019084702788986663
+8,max_temperature_c,-0.004229731206800968
+9,min_temperature_c,-0.2146657504123907
