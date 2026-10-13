@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "output_path": "/home/marvelous/.dev/Tait/capstone/data-science/notebooks/smartcrop_master.ipynb",
+  "generated_at": "2026-10-12T10:40:59.196612+00:00",
+  "total_source_notebooks": 7,
+  "total_cells_in_master": 104,
+  "total_source_cells_included": 95,
+  "total_source_cells_excluded": 2,
+  "clean_outputs_applied": true,
+  "source_notebooks_unchanged": true,
+  "missing_notebooks": [],
+  "sources": [
+    {
+      "order": 1,
+      "filename": "01_data_acquisition.ipynb",
+      "title": "Part 1: Data Acquisition and Understanding",
+      "chapter_section": "Data Acquisition & Understanding",
+      "cells_read": 25,
+      "cells_included": 25,
+      "cells_excluded": 0,
+      "excluded_details": [],
+      "sha256": "9618752bb4d701ff9cdb0e95aeb0c49a152cb41678a637b031a8e905046b768a"
+    },
+    {
+      "order": 2,
+      "filename": "02_data_cleaning.ipynb",
+      "title": "Part 2: Data Cleaning and Preparation",
+      "chapter_section": "Data Cleaning & Preparation",
+      "cells_read": 14,
+      "cells_included": 12,
+      "cells_excluded": 2,
+      "excluded_details": [
+        {
+          "original_cell_index": 12,
+          "cell_type": "code",
+          "reason": "Empty cell (0 characters) omitted"
+        },
+        {
+          "original_cell_index": 13,
+          "cell_type": "code",
+          "reason": "Empty cell (0 characters) omitted"
+        }
+      ],
+      "sha256": "26f83578dd481bced04120888b358c488bf48eb1476d67e16c019ec6bd90f54c"
+    },
+    {
+      "order": 3,
+      "filename": "03_feature_engineering.ipynb",
+      "title": "Part 3: Feature Engineering",
+      "chapter_section": "Feature Engineering",
+      "cells_read": 12,
+      "cells_included": 12,
+      "cells_excluded": 0,
+      "excluded_details": [],
+      "sha256": "c76e0fc53668d18b635f75ea7553438d03a551857f75963ae2b45ab9cbf97ec7"
+    },
+    {
+      "order": 4,
+      "filename": "04_eda_and_descriptive_analysis.ipynb",
+      "title": "Part 4: Exploratory and Descriptive Analysis",
+      "chapter_section": "Exploratory Data Analysis",
+      "cells_read": 12,
+      "cells_included": 12,
+      "cells_excluded": 0,
+      "excluded_details": [],
+      "sha256": "24dcaffcb3accb3f9681803f545c9367a830095b8e9ee4bb2cb56bf89ad9b510"
+    },
+    {
+      "order": 5,
+      "filename": "05_model_training.ipynb",
+      "title": "Part 5: Model Training and Comparison",
+      "chapter_section": "Model Comparison",
+      "cells_read": 11,
+      "cells_included": 11,
+      "cells_excluded": 0,
+      "excluded_details": [],
+      "sha256": "d617177cb5896f4e660ef34ed3f58430426e37167173c74b3e6aa07fdee70675"
+    },
+    {
+      "order": 6,
+      "filename": "06_model_evaluation.ipynb",
+      "title": "Part 6: Model Evaluation and Diagnostics",
+      "chapter_section": "Model Evaluation",
+      "cells_read": 12,
+      "cells_included": 12,
+      "cells_excluded": 0,
+      "excluded_details": [],
+      "sha256": "a4ee9d387bfc89b9c7d5cfb706d7380cdac68be54e3e576c4c546a6dd8bf56de"
+    },
+    {
+      "order": 7,
+      "filename": "07_final_model.ipynb",
+      "title": "Part 7: Final Model and Deployment Preparation",
+      "chapter_section": "Final Model & Deployment Preparation",
+      "cells_read": 11,
+      "cells_included": 11,
+      "cells_excluded": 0,
+      "excluded_details": [],
+      "sha256": "e34d73feabe887c4f0e352619cb3625450b6437dbc4f922106260f417d3ce315"
+    }
+  ]
+}

@@ -80,7 +80,27 @@ python scripts/run_research_pipeline.py
 pytest
 ```
 
-Notebooks `01` through `07` cover acquisition, cleaning, features, EDA, training, evaluation, and the saved model. HTML copies are written by:
+Notebooks `01` through `07` cover acquisition, cleaning, features, EDA, training, evaluation, and the saved model.
+
+### Master Notebook Consolidation
+
+To consolidate the 7 source notebooks into one master notebook (`smartcrop_master.ipynb`) without modifying original source notebooks:
+
+```bash
+# From repository root
+python data-science/scripts/consolidate_notebooks.py
+```
+
+The script verifies source notebook structure, orders them in canonical Chapter 3 order, strips stale outputs by default, preserves source integrity, and writes a detailed audit report to `data-science/reports/consolidation_report.json` and `data-science/reports/consolidation_report.md`.
+
+To execute the consolidated master notebook end-to-end:
+
+```bash
+# From repository root
+python data-science/scripts/execute_master_notebook.py
+```
+
+HTML copies are written by:
 
 ```bash
 python scripts/export_notebooks.py
@@ -113,7 +133,16 @@ SQLite is the local default. Set `DATABASE_URL` to a `postgres://` URL to use Po
 pytest
 ```
 
-A prediction posts rainfall, temperatures, soil pH, soil nitrogen, soil organic carbon (percent), fertilizer kg/ha, planting day, and area in hectares. `soil_organic_carbon` is required. The response includes `predicted_yield_t_ha`, `predicted_production_tonnes`, `model_version`, a short interpretation, and a synthetic-data disclaimer.
+A prediction can be made using **Location-Based Environmental Acquisition** or manual overrides:
+- **Location mode (recommended):** Farmer selects and confirms farm coordinates (`latitude`, `longitude`, `location_selection_method`) and specifies cultivated area (`area_ha`), `planting_date`, and optional `fertilizer_kg_ha` (if omitted, regional training median 150 kg/ha is imputed). Rainfall (CHIRPS), temperatures (NASA POWER), and soil metrics (SoilGrids 2.0) are acquired and cached automatically.
+- **Manual override mode:** Direct raw inputs (`rainfall_mm`, `avg_temperature_c`, `max_temperature_c`, `min_temperature_c`, `soil_ph`, `soil_nitrogen`, `soil_organic_carbon`, `fertilizer_kg_ha`, `planting_day`, `area_ha`).
+
+New endpoints:
+- `POST /api/v1/location/validate/` (validates coordinates, checks Macheke bounding box scope)
+- `POST /api/v1/environmental-data/preview/` (previews CHIRPS, NASA POWER, and SoilGrids records before prediction)
+- `POST /api/v1/predictions/` (calculates features, scores saved pipeline, returns predicted yield, estimated production, provenance, and disclaimers)
+
+The response includes `predicted_yield_t_ha`, `predicted_production_tonnes` (and `estimated_production_tonnes`), `model_version`, `location`, `data_sources`, `data_quality`, interpretation, and disclaimers.
 
 Reports: `GET /api/v1/reports/{predictions,model-performance,dataset,analytics}/?format=pdf|xlsx|csv`.
 

@@ -1,0 +1,474 @@
+{
+  "n_seasons": 24,
+  "year_start": 2000,
+  "year_end": 2023,
+  "retrieval_date": "5 October 2026",
+  "rain_corr": 0.725,
+  "rain_corr_n": 26,
+  "nasa_daily": 9131,
+  "chirps_daily": 9131,
+  "soil_rows": 15,
+  "faostat_years": 64,
+  "faostat_year_min": 1961,
+  "faostat_year_max": 2024,
+  "faostat_flags": {
+    "A": 23,
+    "X": 1
+  },
+  "faostat_x_years": [
+    2009
+  ],
+  "yield_mean": 0.88,
+  "yield_median": 0.828,
+  "yield_std": 0.334,
+  "yield_min": 0.287,
+  "yield_max": 1.534,
+  "yield_min_year": 2008,
+  "yield_max_year": 2021,
+  "rain_mean": 732.8,
+  "rain_median": 701.0,
+  "rain_std": 172.4,
+  "rain_min": 458.8,
+  "rain_max": 1062.4,
+  "rain_min_year": 2016,
+  "rain_max_year": 2008,
+  "temp_mean": 21.02,
+  "temp_min": 20.15,
+  "temp_max": 22.49,
+  "heat_mean": 5.3,
+  "heat_max": 27,
+  "heat_max_year": 2016,
+  "soil": {
+    "soil_ph": 5.8,
+    "soil_nitrogen_g_kg": 1.35,
+    "soil_organic_carbon_g_kg": 14.0,
+    "soil_clay_pct": 20.4,
+    "soil_sand_pct": 62.0,
+    "soil_silt_pct": 17.6,
+    "soil_cec_cmol_kg": 7.2,
+    "soil_bulk_density_g_cm3": 1.54
+  },
+  "shapiro_w": 0.97,
+  "shapiro_p": 0.663,
+  "rain_q25": 595.2,
+  "n_dry": 6,
+  "yield_dry": 0.676,
+  "yield_other": 0.947,
+  "mann_u": 25.0,
+  "mann_p": 0.056,
+  "kendall_tau": 0.101,
+  "kendall_p": 0.507,
+  "train_years": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015
+  ],
+  "validation_years": [
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "test_years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "chosen_model": "Random Forest Regressor",
+  "comparison": [
+    {
+      "model_name": "Random Forest Regressor",
+      "validation_mae": 0.3922,
+      "validation_rmse": 0.4181,
+      "validation_r2": -0.095
+    },
+    {
+      "model_name": "Gradient Boosting Regressor",
+      "validation_mae": 0.4981,
+      "validation_rmse": 0.5052,
+      "validation_r2": -0.5992
+    },
+    {
+      "model_name": "Linear Regression",
+      "validation_mae": 0.4351,
+      "validation_rmse": 0.5455,
+      "validation_r2": -0.8643
+    },
+    {
+      "model_name": "Decision Tree Regressor",
+      "validation_mae": 0.5134,
+      "validation_rmse": 0.5624,
+      "validation_r2": -0.9816
+    }
+  ],
+  "expanding": [
+    {
+      "model_name": "Random Forest Regressor",
+      "one_step_years": "2008-2019",
+      "n_forecasts": 12,
+      "mae": 0.2981,
+      "rmse": 0.3931,
+      "r2": -0.4859
+    },
+    {
+      "model_name": "Gradient Boosting Regressor",
+      "one_step_years": "2008-2019",
+      "n_forecasts": 12,
+      "mae": 0.3627,
+      "rmse": 0.4457,
+      "r2": -0.9109
+    },
+    {
+      "model_name": "Decision Tree Regressor",
+      "one_step_years": "2008-2019",
+      "n_forecasts": 12,
+      "mae": 0.3812,
+      "rmse": 0.4706,
+      "r2": -1.1301
+    },
+    {
+      "model_name": "Linear Regression",
+      "one_step_years": "2008-2019",
+      "n_forecasts": 12,
+      "mae": 0.6059,
+      "rmse": 0.8077,
+      "r2": -5.2744
+    }
+  ],
+  "grid_best": {
+    "n_estimators": 200.0,
+    "max_depth": 3.0,
+    "min_samples_leaf": 3.0,
+    "validation_mae": 0.3781,
+    "validation_rmse": 0.4136,
+    "validation_r2": -0.0718
+  },
+  "grid_preset_rmse": 0.4181,
+  "test_scores": {
+    "mae": 0.2239,
+    "rmse": 0.303,
+    "r2": -0.0931
+  },
+  "mean_baseline": {
+    "validation": {
+      "mae": 0.3807,
+      "rmse": 0.4447,
+      "r2": -0.2389
+    },
+    "test": {
+      "mae": 0.3237,
+      "rmse": 0.4222,
+      "r2": -1.1224
+    }
+  },
+  "trend_baseline": {
+    "validation": {
+      "mae": 0.4995,
+      "rmse": 0.5814,
+      "r2": -1.1176
+    },
+    "test": {
+      "mae": 0.615,
+      "rmse": 0.6742,
+      "r2": -4.4109
+    }
+  },
+  "test_predictions": [
+    {
+      "year": 2020,
+      "yield_t_ha": 1.1801,
+      "predicted_t_ha": 0.9121
+    },
+    {
+      "year": 2021,
+      "yield_t_ha": 1.5344,
+      "predicted_t_ha": 0.9945
+    },
+    {
+      "year": 2022,
+      "yield_t_ha": 0.7628,
+      "predicted_t_ha": 0.8129
+    },
+    {
+      "year": 2023,
+      "yield_t_ha": 0.935,
+      "predicted_t_ha": 0.8974
+    }
+  ],
+  "importance": [
+    {
+      "rank": 1,
+      "feature": "season_rainfall_mm",
+      "importance_mean": 0.0696
+    },
+    {
+      "rank": 2,
+      "feature": "rainfall_days",
+      "importance_mean": 0.0387
+    },
+    {
+      "rank": 3,
+      "feature": "critical_period_rainfall_mm",
+      "importance_mean": 0.0286
+    },
+    {
+      "rank": 4,
+      "feature": "rainfall_cv",
+      "importance_mean": 0.0214
+    },
+    {
+      "rank": 5,
+      "feature": "temperature_range_c",
+      "importance_mean": 0.0204
+    },
+    {
+      "rank": 6,
+      "feature": "heat_stress_days",
+      "importance_mean": 0.0165
+    },
+    {
+      "rank": 7,
+      "feature": "avg_temperature_c",
+      "importance_mean": 0.0019
+    },
+    {
+      "rank": 8,
+      "feature": "max_temperature_c",
+      "importance_mean": -0.0042
+    },
+    {
+      "rank": 9,
+      "feature": "min_temperature_c",
+      "importance_mean": -0.2147
+    }
+  ],
+  "vif": [
+    {
+      "feature": "season_rainfall_mm",
+      "r2_on_others": 0.891,
+      "vif": 9.18
+    },
+    {
+      "feature": "critical_period_rainfall_mm",
+      "r2_on_others": 0.673,
+      "vif": 3.06
+    },
+    {
+      "feature": "rainfall_cv",
+      "r2_on_others": 0.923,
+      "vif": 12.95
+    },
+    {
+      "feature": "rainfall_days",
+      "r2_on_others": 0.97,
+      "vif": 32.81
+    },
+    {
+      "feature": "avg_temperature_c",
+      "r2_on_others": 0.995,
+      "vif": 220.05
+    },
+    {
+      "feature": "max_temperature_c",
+      "r2_on_others": 1.0,
+      "vif": NaN
+    },
+    {
+      "feature": "min_temperature_c",
+      "r2_on_others": 1.0,
+      "vif": NaN
+    },
+    {
+      "feature": "temperature_range_c",
+      "r2_on_others": 1.0,
+      "vif": NaN
+    },
+    {
+      "feature": "heat_stress_days",
+      "r2_on_others": 0.629,
+      "vif": 2.7
+    }
+  ],
+  "associations": [
+    {
+      "feature": "temperature_range_c",
+      "pearson": -0.47,
+      "spearman": -0.47
+    },
+    {
+      "feature": "critical_period_rainfall_mm",
+      "pearson": 0.433,
+      "spearman": 0.389
+    },
+    {
+      "feature": "rainfall_days",
+      "pearson": 0.385,
+      "spearman": 0.484
+    },
+    {
+      "feature": "max_temperature_c",
+      "pearson": -0.321,
+      "spearman": -0.402
+    },
+    {
+      "feature": "min_temperature_c",
+      "pearson": 0.311,
+      "spearman": 0.383
+    },
+    {
+      "feature": "rainfall_cv",
+      "pearson": -0.303,
+      "spearman": -0.375
+    },
+    {
+      "feature": "season_rainfall_mm",
+      "pearson": 0.278,
+      "spearman": 0.368
+    },
+    {
+      "feature": "heat_stress_days",
+      "pearson": -0.196,
+      "spearman": -0.11
+    },
+    {
+      "feature": "avg_temperature_c",
+      "pearson": -0.173,
+      "spearman": -0.207
+    }
+  ],
+  "description": [
+    {
+      "variable": "yield_t_ha",
+      "count": 24.0,
+      "mean": 0.88,
+      "median": 0.828,
+      "std": 0.334,
+      "min": 0.287,
+      "max": 1.534,
+      "skew": 0.238
+    },
+    {
+      "variable": "season_rainfall_mm",
+      "count": 24.0,
+      "mean": 732.764,
+      "median": 701.021,
+      "std": 172.408,
+      "min": 458.846,
+      "max": 1062.39,
+      "skew": 0.516
+    },
+    {
+      "variable": "critical_period_rainfall_mm",
+      "count": 24.0,
+      "mean": 356.772,
+      "median": 363.077,
+      "std": 119.196,
+      "min": 134.948,
+      "max": 538.057,
+      "skew": -0.194
+    },
+    {
+      "variable": "rainfall_days",
+      "count": 24.0,
+      "mean": 60.958,
+      "median": 58.5,
+      "std": 12.39,
+      "min": 42.0,
+      "max": 83.0,
+      "skew": 0.127
+    },
+    {
+      "variable": "rainfall_cv",
+      "count": 24.0,
+      "mean": 1.767,
+      "median": 1.757,
+      "std": 0.303,
+      "min": 1.341,
+      "max": 2.46,
+      "skew": 0.419
+    },
+    {
+      "variable": "avg_temperature_c",
+      "count": 24.0,
+      "mean": 21.022,
+      "median": 20.912,
+      "std": 0.619,
+      "min": 20.151,
+      "max": 22.491,
+      "skew": 0.879
+    },
+    {
+      "variable": "max_temperature_c",
+      "count": 24.0,
+      "mean": 27.293,
+      "median": 27.018,
+      "std": 1.063,
+      "min": 25.999,
+      "max": 29.381,
+      "skew": 0.529
+    },
+    {
+      "variable": "min_temperature_c",
+      "count": 24.0,
+      "mean": 15.754,
+      "median": 15.785,
+      "std": 0.395,
+      "min": 15.242,
+      "max": 16.589,
+      "skew": 0.43
+    },
+    {
+      "variable": "temperature_range_c",
+      "count": 24.0,
+      "mean": 11.539,
+      "median": 11.477,
+      "std": 0.987,
+      "min": 9.845,
+      "max": 13.268,
+      "skew": 0.02
+    },
+    {
+      "variable": "heat_stress_days",
+      "count": 24.0,
+      "mean": 5.292,
+      "median": 4.5,
+      "std": 5.982,
+      "min": 0.0,
+      "max": 27.0,
+      "skew": 2.256
+    }
+  ],
+  "management_missing": {
+    "fertilizer_kg_ha": 1.0,
+    "basal_fertilizer_kg_ha": 1.0,
+    "top_dressing_kg_ha": 1.0,
+    "seed_variety": 1.0,
+    "planting_day_of_year": 1.0,
+    "irrigation_used": 1.0
+  },
+  "versions": {
+    "python": "3.12.7",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.9.2",
+    "scipy": "1.13.1"
+  },
+  "random_seed": 42,
+  "r2_target": 0.8,
+  "r2_target_met": false
+}

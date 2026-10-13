@@ -1,0 +1,5 @@
+model_name,validation_mae,validation_rmse,validation_r2
+Random Forest Regressor,0.3922,0.4181,-0.095
+Gradient Boosting Regressor,0.4981,0.5052,-0.5992
+Linear Regression,0.4351,0.5455,-0.8643
+Decision Tree Regressor,0.5134,0.5624,-0.9816

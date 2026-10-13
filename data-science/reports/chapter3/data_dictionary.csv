@@ -1,0 +1,17 @@
+variable,meaning,unit,source
+year,Harvest year used as the join key,year,Calendar rule on the November-March season
+season,"Season label, for example 2019/2020",label,Derived from the harvest year
+yield_t_ha,"Zimbabwe maize yield, the target",t/ha,"FAOSTAT, kg/ha divided by 1000"
+production_tonnes,National maize production,tonnes,FAOSTAT
+season_rainfall_mm,November-March rainfall total,mm,"CHIRPS, NASA POWER only if CHIRPS is missing"
+critical_period_rainfall_mm,January-February rainfall,mm,CHIRPS
+rainfall_days,Days with rainfall above 1 mm,days,CHIRPS
+rainfall_cv,Coefficient of variation of daily rainfall,ratio,CHIRPS
+avg_temperature_c,Mean of daily mean temperature,°C,NASA POWER T2M
+max_temperature_c,Mean of daily maximum temperature,°C,NASA POWER T2M_MAX
+min_temperature_c,Mean of daily minimum temperature,°C,NASA POWER T2M_MIN
+temperature_range_c,max_temperature_c minus min_temperature_c,°C,Engineered from NASA POWER
+heat_stress_days,Days with maximum temperature of at least 33 °C,days,NASA POWER
+soil_ph,"Topsoil pH, 0-5 cm, constant across years",pH,SoilGrids 2.0
+soil_nitrogen_g_kg,"Topsoil nitrogen, constant across years",g/kg,SoilGrids 2.0
+soil_organic_carbon_g_kg,"Topsoil organic carbon, constant across years",g/kg,SoilGrids 2.0

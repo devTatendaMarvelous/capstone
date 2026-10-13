@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
+from typing import Any
 
+import numpy as np
 import pandas as pd
 from django.conf import settings
 from rest_framework.exceptions import ValidationError
@@ -70,44 +73,82 @@ class MLModelService:
         return cls._metadata or {}
 
     @classmethod
-    def validate_features(cls, payload: dict) -> dict:
+    def validate_features(cls, payload: dict, allow_imputed_fertilizer: bool = True) -> dict[str, float]:
         errors: dict[str, list[str]] = {}
         cleaned: dict[str, float] = {}
-        required = RAW_FEATURES
-        for name in required + ["area_ha"]:
-            if name not in payload or payload[name] in (None, ""):
+
+        # Area is always strictly required for production calculations
+        if "area_ha" not in payload or payload["area_ha"] in (None, ""):
+            errors["area_ha"] = ["This field is required."]
+        else:
+            try:
+                area_val = float(payload["area_ha"])
+                low, high = BOUNDS["area_ha"]
+                if not low <= area_val <= high:
+                    errors["area_ha"] = [f"Value must be between {low} and {high}."]
+                else:
+                    cleaned["area_ha"] = area_val
+            except (TypeError, ValueError):
+                errors["area_ha"] = ["Enter a number."]
+
+        for name in RAW_FEATURES:
+            val = payload.get(name)
+
+            # Documented missing fertilizer workflow:
+            # If the farmer does not know their fertilizer rate, allow imputation only if supported
+            if name == "fertilizer_kg_ha" and (val is None or val == ""):
+                if allow_imputed_fertilizer:
+                    cleaned[name] = np.nan
+                    continue
+                errors[name] = ["Fertilizer rate is required."]
+                continue
+
+            if val in (None, ""):
                 errors[name] = ["This field is required."]
                 continue
+
             try:
-                value = float(payload[name])
+                numeric_val = float(val)
             except (TypeError, ValueError):
                 errors[name] = ["Enter a number."]
                 continue
+
             low, high = BOUNDS.get(name, (None, None))
-            if low is not None and not low <= value <= high:
+            if low is not None and not low <= numeric_val <= high:
                 errors[name] = [f"Value must be between {low} and {high}."]
                 continue
-            cleaned[name] = value
-        if not errors and not (
-            cleaned["min_temperature_c"] <= cleaned["avg_temperature_c"] <= cleaned["max_temperature_c"]
+
+            cleaned[name] = numeric_val
+
+        # Consistency check for temperatures
+        if (
+            "min_temperature_c" in cleaned
+            and "avg_temperature_c" in cleaned
+            and "max_temperature_c" in cleaned
+            and not (cleaned["min_temperature_c"] <= cleaned["avg_temperature_c"] <= cleaned["max_temperature_c"])
         ):
             errors["avg_temperature_c"] = ["Average temperature must sit between the minimum and the maximum."]
+
         if errors:
             raise ValidationError(errors)
+
         return cleaned
 
     @classmethod
-    def predict(cls, payload: dict) -> dict:
-        cleaned = cls.validate_features(payload)
+    def predict(cls, payload: dict, allow_imputed_fertilizer: bool = True) -> dict[str, Any]:
+        cleaned = cls.validate_features(payload, allow_imputed_fertilizer=allow_imputed_fertilizer)
         model = cls.load_model()
         frame = pd.DataFrame([{name: cleaned[name] for name in RAW_FEATURES}])
         yield_t_ha = float(model.predict(frame)[0])
         area = cleaned["area_ha"]
-        version = cls.get_model_metadata().get("version", "unknown")
+        version = cls.get_model_metadata().get("version", "1.0.0")
         rounded = round(yield_t_ha, 2)
+        production = round(rounded * area, 2)
+
         return {
             "predicted_yield_t_ha": rounded,
-            "predicted_production_tonnes": round(rounded * area, 2),
+            "predicted_production_tonnes": production,
+            "estimated_production_tonnes": production,
             "model_version": version,
             "interpretation": (
                 f"Estimated yield: {rounded:.2f} tonnes/ha. "
@@ -115,6 +156,7 @@ class MLModelService:
             ),
             "disclaimer": (
                 "The estimate comes from a saved model and is not a guaranteed yield. "
-                "Model 1.0.0 was trained on synthetic development data, not on a Macheke farm survey."
+                "Model 1.0.0 was trained on synthetic development data, not on a Macheke farm survey. "
+                "The current model's evaluation results do not establish reliable performance on real farms."
             ),
         }
